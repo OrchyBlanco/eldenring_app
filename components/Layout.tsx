@@ -1,3 +1,4 @@
+
 import { ThemeProvider } from "@mui/material/styles";
 import { customTheme } from "./Theme";
 import Navbar from "./UI/Navbar";
@@ -17,3 +18,5 @@ const Layout = ({ children }: Props) => {
 };
 
 export default Layout;
+=======
+
