@@ -1,0 +1,15 @@
+<svg viewBox="100 60 300 300" width="300" height="300">
+  <ellipse style="fill: none; paint-order: stroke; stroke-width: 3px; stroke: rgb(255, 223, 143);" cx="250" cy="150" rx="50" ry="50"></ellipse>
+  <ellipse style="fill: none; paint-order: stroke; stroke-width: 3px; stroke: rgb(255, 223, 143);" cx="301.979" cy="199.699" rx="50" ry="50"></ellipse>
+  <ellipse style="fill: none; paint-order: stroke; stroke-width: 3px; stroke: rgb(255, 223, 143);" cx="199.845" cy="200.611" rx="50" ry="50"></ellipse>
+  <ellipse style="fill: none; paint-order: stroke; stroke-width: 3px; stroke: rgb(255, 223, 143);" cx="250" cy="250" rx="50" ry="50"></ellipse>
+  <ellipse style="fill: none; paint-order: stroke; stroke-width: 3px; stroke: rgb(255, 223, 143);" cx="250" cy="198.933" rx="50" ry="50"></ellipse>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 142.294 125.757 C 112.474 172.656 114.196 230.587 141.461 272.22"></path>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 382.085 271.022 C 353.279 224.89 354.942 167.907 381.281 126.956" transform="matrix(-1, 0, 0, -1, 743.087341, 397.978027)"></path>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 260.613 391.206 C 234.943 348.242 236.49 295.171 260.051 257.03" transform="matrix(0, -1, 1, 0, -72.877228, 575.358765)"></path>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 260.954 8.269 C 234.35 51.233 235.953 104.304 260.372 142.445" transform="matrix(0, 1, -1, 0, 326.597748, -175.883728)"></path>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 255.059 289.861 C 241.745 311.362 242.547 337.921 254.767 357.009" transform="matrix(0, 1, -1, 0, 573.632874, 73.237099)"></path>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 254.812 110.984 C 241.305 88.376 242.119 60.451 254.516 40.381" transform="matrix(0, -1, 1, 0, 174.198013, 325.563019)"></path>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 131.736 225.928 C 121.328 209.232 121.929 188.608 131.445 173.787" transform="matrix(-1, 0, 0, -1, 255.854538, 399.714996)"></path>
+  <path style="fill: none; stroke-width: 3px; stroke-linecap: round; stroke: rgb(255, 223, 143);" d="M 378.953 173.223 C 368.031 190.4 368.662 211.618 378.648 226.866"></path>
+</svg>
