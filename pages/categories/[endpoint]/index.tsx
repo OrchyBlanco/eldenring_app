@@ -10,31 +10,15 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
+
   return (
     <>
-      <div>
-        {serverData.data.map((category: any) => {
-          return (
-            <>
-              <Link
-                href={"/categories/[endpoint]/[id]"}
-                as={`/categories/${router.query.endpoint}/${category.id}`}
-              >
-                <a>
-                  <Button variant="outlined" color="info" sx={{ m: 1 }}>
-                    {category.name}
-                  </Button>
-                </a>
-              </Link>
-            </>
-          );
-        })}
-      </div>
-
+      
       <Container maxWidth="xl">
         <Grid container spacing="2">
           <Grid item xs={12}>
@@ -58,6 +42,8 @@ export default function Categories({ serverData }: any) {
                 >
                   <a>
                     <ImageListItem key={index} cols={2}>
+                      {/* <Image src={item.image} alt={""} height={60} width={60} /> */}
+
                       <img
                         src={`${item.image}`}
                         srcSet={`${item.image}`}
@@ -67,9 +53,11 @@ export default function Categories({ serverData }: any) {
                       <ImageListItemBar
                         title={item.name}
                         subtitle={
-                          item.category == undefined
-                            ? `${item.type}`
-                            : item.category
+                          item.category != undefined
+                            ? item.category
+                            : item.type != undefined
+                            ? item.type
+                            : item.affinity
                         }
                       />
                     </ImageListItem>

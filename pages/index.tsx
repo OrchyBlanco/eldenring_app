@@ -29,6 +29,16 @@ const pages = [
     endpoint: "sorceries",
     description: "Sorceries DESCRIPTION",
   },
+  {
+    label: "Shields",
+    endpoint: "shields",
+    description: "Shields DESCRIPTION",
+  },
+  {
+    label: "Ashes of War",
+    endpoint: "ashes",
+    description: "Ashes of War DESCRIPTION",
+  },
 ];
 
 const Home: NextPage = () => {
@@ -42,7 +52,10 @@ const Home: NextPage = () => {
         >
           {pages.map((page, index) => (
             <Grid item xs={12} sm={8} md={3} key={index}>
-              <Link href={`/categories/[endpoint]`} as={`/categories/${page.endpoint}`}>
+              <Link
+                href={`/categories/[endpoint]`}
+                as={`/categories/${page.endpoint}`}
+              >
                 <a>
                   <Card sx={{ maxWidth: 345 }}>
                     <CardContent>
