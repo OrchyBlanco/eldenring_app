@@ -16,7 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const pages = [
-  { label: "Weapons", url: "/weapons" },
+  { label: "Weapons", url: "/posts" },
   { label: "Armors", url: "/armors" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

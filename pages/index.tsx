@@ -1,25 +1,61 @@
-import { Box, Button, Grid, Paper } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Paper,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+} from "@mui/material";
 import type { NextPage } from "next";
 import Link from "next/link";
 
 const pages = [
-  { label: "Weapons", url: "/weapons", img: "" },
-  { label: "Armors", url: "/armors", img: "" },
-  { label: "Sorceries", url: "/sorceries", img: "" },
+  {
+    label: "Weapons",
+    endpoint: "weapons",
+    description:
+      "Weapons in Elden Ring is a piece of offensive equipment that is used by the player's character to inflict damage against Enemies and Bosses.",
+  },
+  {
+    label: "Armors",
+    endpoint: "armors",
+    description: "ARMOR DESCRIPTION",
+  },
+  {
+    label: "Sorceries",
+    endpoint: "sorceries",
+    description: "Sorceries DESCRIPTION",
+  },
 ];
 
 const Home: NextPage = () => {
   return (
     <>
-      <Box sx={{ m: 3 }}>
+      <Box sx={{ py: 2, px: 3 }}>
         <Grid
           container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
+          spacing={{ xs: 1, md: 2 }}
+          columns={{ xs: 2, sm: 12, md: 12 }}
         >
           {pages.map((page, index) => (
-            <Grid item xs={2} sm={4} md={4} key={index}>
-              <Paper sx={{ p: 3 }}>{page.label}</Paper>
+            <Grid item xs={12} sm={8} md={3} key={index}>
+              <Link href={`/categories/[endpoint]`} as={`/categories/${page.endpoint}`}>
+                <a>
+                  <Card sx={{ maxWidth: 345 }}>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {page.label}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {page.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </a>
+              </Link>
             </Grid>
           ))}
         </Grid>
