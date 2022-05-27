@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -11,13 +12,11 @@ export default function Categories({ serverData }: any) {
         {serverData.data.map((category:any) => {
           return (
             <>
-              <p>{category.id}</p>
-
               <Link
                 href={"/categories/[endpoint]/[id]"}
                 as={`/categories/${router.query.endpoint}/${category.id}`}
               >
-                <a>Init</a>
+                <a><Button variant="outlined" color="info" sx={{m:1}}>{category.name}</Button></a>
               </Link>
             </>
           );
