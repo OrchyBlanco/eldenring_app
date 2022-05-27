@@ -8,12 +8,12 @@ interface Props {
 }
 const Layout = ({ children }: Props) => {
   return (
-    <>
+    
       <ThemeProvider theme={customTheme}>
         <Navbar />
         <main>{children}</main>
       </ThemeProvider>
-    </>
+    
   );
 };
 
