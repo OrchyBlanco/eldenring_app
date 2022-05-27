@@ -5,6 +5,7 @@ export default function Element() {
     return (
       <>
        {router.query.id}
+       <p>{router.query.name}</p>
       </>
     );
   }
