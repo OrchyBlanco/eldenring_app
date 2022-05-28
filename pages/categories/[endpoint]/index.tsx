@@ -10,6 +10,9 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import genericImage from "./images/generic.jpg";
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
@@ -27,6 +30,9 @@ export default function Categories({ serverData }: any) {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+
+                    textTransform: "capitalize",
+
                   }}
                 >
                   <h1>{router.query.endpoint}</h1>
@@ -39,11 +45,18 @@ export default function Categories({ serverData }: any) {
                 >
                   <a>
                     <ImageListItem key={index} cols={2}>
+
+                      {/* <Image src={item.image} alt={""} height={60} width={60} /> */}
+
                       <img
-                        src={`${item.image}`}
+                        src={`${
+                        
+                          item.image != null ? item.image : genericImage
+                        }`}
                         srcSet={`${item.image}`}
                         alt={item.name}
-                        loading="lazy"
+                        loading="eager"
+
                       />
                       <ImageListItemBar
                         title={item.name}

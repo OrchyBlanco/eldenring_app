@@ -69,7 +69,7 @@ const ResponsiveAppBar = () => {
           </Box>
 
           {/** Burger Menu - Small viewports */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -111,7 +111,7 @@ const ResponsiveAppBar = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
 
           {/**LOGO CENTER */}
           <Box
@@ -135,7 +135,7 @@ const ResponsiveAppBar = () => {
           </Box>
 
           {/* Nav Menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, index) => (
               <Button key={index} onClick={handleCloseNavMenu}>
                 <Link
@@ -148,7 +148,7 @@ const ResponsiveAppBar = () => {
                 </Link>
               </Button>
             ))}
-          </Box>
+          </Box> */}
 
           {/** User LOGGER */}
           <Box sx={{ flexGrow: 0 }}>
