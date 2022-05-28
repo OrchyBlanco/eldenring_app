@@ -15,7 +15,9 @@ import { useRouter } from "next/router";
 
 import { useEffect, useState } from "react";
 import genericImage from "../../../public/images/generic.jpg";
+
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
@@ -125,10 +127,51 @@ export default function Categories({ serverData }: any) {
                   }
                 />
               </ImageListItem>
+
             </a>
           </Link>
         ))}
       </Box>
+
+              {serverData.data.map((item: any, index: number) => (
+                <Link
+                  href={"/categories/[endpoint]/[id]"}
+                  as={`/categories/${router.query.endpoint}/${item.id}`}
+                >
+                  <a>
+                    <ImageListItem key={index} cols={5}>
+
+                      {/* <Image src={item.image} alt={""} height={60} width={60} /> */}
+
+                      <img
+                        src={`${
+                        
+                          item.image != null ? item.image : genericImage
+                        }`}
+                        srcSet={`${item.image}`}
+                        alt={item.name}
+                        loading="eager"
+
+                      />
+                      <ImageListItemBar
+                        title={item.name}
+                        subtitle={
+                          item.category != undefined
+                            ? item.category
+                            : item.type != undefined
+                            ? item.type
+                            : item.affinity
+                        }
+                      />
+                    </ImageListItem>
+                  </a>
+                </Link>
+              ))}
+            </ImageList>
+          </Grid>
+        </Grid>
+      </Container>
+
     </>
   );
 }
