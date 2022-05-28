@@ -30,7 +30,7 @@ export default function Categories({ serverData }: any) {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    textTransform: 'capitalize'
+                    textTransform: "capitalize",
                   }}
                 >
                   <h1>{router.query.endpoint}</h1>
@@ -44,12 +44,11 @@ export default function Categories({ serverData }: any) {
                   <a>
                     <ImageListItem key={index} cols={2}>
                       {/* <Image src={item.image} alt={""} height={60} width={60} /> */}
-                      
+
                       <img
                         src={`${
-                          
-                          item.image == undefined ? genericImage : item.image
-                          
+                        
+                          item.image != null ? item.image : genericImage
                         }`}
                         srcSet={`${item.image}`}
                         alt={item.name}
