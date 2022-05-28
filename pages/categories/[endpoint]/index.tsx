@@ -25,53 +25,7 @@ export default function Categories({ serverData }: any) {
 
   return (
     <>
-      {/*  <Container maxWidth="xl">
-        <ImageList cols={4}>
-          <ImageListItem key="Subheader" cols={4}>
-            <ListSubheader
-              component="div"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-
-                textTransform: "capitalize",
-              }}
-            >
-              <h1>{router.query.endpoint}</h1>
-            </ListSubheader>
-          </ImageListItem>
-          {serverData.data.map((item: any, index: number) => (
-            <Link
-              href={"/categories/[endpoint]/[id]"}
-              as={`/categories/${router.query.endpoint}/${item.id}`}
-            >
-              <a>
-                <ImageListItem key={index} cols={2}>
-                  
-
-                  <img
-                    src={`${item.image != null ? item.image : genericImage}`}
-                    srcSet={`${item.image}`}
-                    alt={item.name}
-                    loading="eager"
-                  />
-                  <ImageListItemBar
-                    title={item.name}
-                    subtitle={
-                      item.category != undefined
-                        ? item.category
-                        : item.type != undefined
-                        ? item.type
-                        : item.affinity
-                    }
-                  />
-                </ImageListItem>
-              </a>
-            </Link>
-          ))}
-        </ImageList>
-      </Container> */}
+     
       <ListSubheader
         component="div"
         sx={{
