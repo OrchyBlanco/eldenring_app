@@ -12,35 +12,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { NextPage } from "next";
-
-const pages = [
-  {
-    label: "Weapons",
-    endpoint: "weapons",
-    description:
-      "Weapons in Elden Ring is a piece of offensive equipment that is used by the player's character to inflict damage against Enemies and Bosses.",
-  },
-  {
-    label: "Armors",
-    endpoint: "armors",
-    description: "ARMOR DESCRIPTION",
-  },
-  {
-    label: "Sorceries",
-    endpoint: "sorceries",
-    description: "Sorceries DESCRIPTION",
-  },
-  {
-    label: "Shields",
-    endpoint: "shields",
-    description: "Shields DESCRIPTION",
-  },
-  {
-    label: "Ashes of War",
-    endpoint: "ashes",
-    description: "Ashes of War DESCRIPTION",
-  },
-];
+import { pages } from "../components/Pages";
 
 const Home: NextPage = () => {
   return (

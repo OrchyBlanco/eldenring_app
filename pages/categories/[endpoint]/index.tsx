@@ -10,15 +10,12 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
 
   return (
     <>
-      
       <Container maxWidth="xl">
         <Grid container spacing="2">
           <Grid item xs={12}>
@@ -42,8 +39,6 @@ export default function Categories({ serverData }: any) {
                 >
                   <a>
                     <ImageListItem key={index} cols={2}>
-                      {/* <Image src={item.image} alt={""} height={60} width={60} /> */}
-
                       <img
                         src={`${item.image}`}
                         srcSet={`${item.image}`}
