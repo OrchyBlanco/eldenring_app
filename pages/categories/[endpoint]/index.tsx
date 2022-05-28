@@ -17,6 +17,9 @@ import { useEffect, useState } from "react";
 import genericImage from "../../../public/images/generic.jpg";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+
+
+
 export default function Categories({ serverData }: any) {
   const router = useRouter();
 
