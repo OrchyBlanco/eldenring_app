@@ -19,7 +19,7 @@ export default function Categories({ serverData }: any) {
       <Container maxWidth="xl">
         <Grid container spacing="2">
           <Grid item xs={12}>
-            <ImageList>
+            <ImageList key="ImageHeader">
               <ImageListItem key="Subheader" cols={12}>
                 <ListSubheader
                   component="div"
@@ -46,6 +46,7 @@ export default function Categories({ serverData }: any) {
                         loading="lazy"
                       />
                       <ImageListItemBar
+                        key={index}
                         title={item.name}
                         subtitle={
                           item.category != undefined
