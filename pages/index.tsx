@@ -9,8 +9,8 @@ import {
   CardContent,
   CardActions,
 } from "@mui/material";
-import type { NextPage } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 const pages = [
   {
@@ -30,8 +30,7 @@ const pages = [
     description: "Sorceries DESCRIPTION",
   },
 ];
-
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <>
       <Box sx={{ py: 2, px: 3 }}>
@@ -62,6 +61,4 @@ const Home: NextPage = () => {
       </Box>
     </>
   );
-};
-
-export default Home;
+}
