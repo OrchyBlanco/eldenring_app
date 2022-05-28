@@ -44,7 +44,7 @@ export default function Categories({ serverData }: any) {
                   as={`/categories/${router.query.endpoint}/${item.id}`}
                 >
                   <a>
-                    <ImageListItem key={index} cols={2}>
+                    <ImageListItem key={index} cols={5}>
 
                       {/* <Image src={item.image} alt={""} height={60} width={60} /> */}
 
