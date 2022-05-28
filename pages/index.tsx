@@ -9,8 +9,12 @@ import {
   CardContent,
   CardActions,
 } from "@mui/material";
-import type { NextPage } from "next";
 import Link from "next/link";
+
+import Image from "next/image";
+import type { NextPage } from "next";
+import { pages } from "../components/Pages";
+
 
 const pages = [
   {
@@ -80,6 +84,7 @@ const pages = [
     description: "Talismans in Elden Ring are accessories which can be equipped to acquire a variety of offensive, defensive, or utility effects. Talismans may be obtained as an item drop from Enemies or Bosses, looted from chests, or purchased from Merchants.",
   },
 ];
+
 
 const Home: NextPage = () => {
   return (
