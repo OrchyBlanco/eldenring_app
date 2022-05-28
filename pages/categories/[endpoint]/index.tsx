@@ -12,7 +12,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import genericImage from "../../../images/generic.jpg";
+import genericImage from "../../../public/images/generic.jpg";
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
