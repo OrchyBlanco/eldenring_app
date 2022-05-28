@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
+import type { NextPage } from "next";
 
 const pages = [
   {
@@ -29,8 +30,19 @@ const pages = [
     endpoint: "sorceries",
     description: "Sorceries DESCRIPTION",
   },
+  {
+    label: "Shields",
+    endpoint: "shields",
+    description: "Shields DESCRIPTION",
+  },
+  {
+    label: "Ashes of War",
+    endpoint: "ashes",
+    description: "Ashes of War DESCRIPTION",
+  },
 ];
-export default function Home() {
+
+const Home: NextPage = () => {
   return (
     <>
       <Box sx={{ py: 2, px: 3 }}>
@@ -41,7 +53,10 @@ export default function Home() {
         >
           {pages.map((page, index) => (
             <Grid item xs={12} sm={8} md={3} key={index}>
-              <Link href={`/categories/[endpoint]`} as={`/categories/${page.endpoint}`}>
+              <Link
+                href={`/categories/[endpoint]`}
+                as={`/categories/${page.endpoint}`}
+              >
                 <a>
                   <Card sx={{ maxWidth: 345 }}>
                     <CardContent>
@@ -61,4 +76,6 @@ export default function Home() {
       </Box>
     </>
   );
-}
+};
+
+export default Home;
