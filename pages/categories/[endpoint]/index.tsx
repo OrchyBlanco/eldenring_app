@@ -1,49 +1,31 @@
 import {
   Button,
   Container,
+  Box,
   Grid,
   IconButton,
   ImageList,
   ImageListItem,
+  imageListItemClasses,
   ImageListItemBar,
   ListSubheader,
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import genericImage from "../../../public/images/generic.jpg";
-<<<<<<< Updated upstream
-=======
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { ThemeContext } from "@emotion/react";
->>>>>>> Stashed changes
+
+
+
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
 
   return (
     <>
-<<<<<<< Updated upstream
-      <Container maxWidth="xl">
-        <Grid container spacing="2">
-          <Grid item xs={12}>
-            <ImageList>
-              <ImageListItem key="Subheader" cols={12}>
-                <ListSubheader
-                  component="div"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-
-                    textTransform: "capitalize",
-
-                  }}
-                >
-                  <h1>{router.query.endpoint}</h1>
-                </ListSubheader>
-=======
+     
       <ListSubheader
         component="div"
         sx={{
@@ -57,6 +39,7 @@ export default function Categories({ serverData }: any) {
         <h1>{router.query.endpoint}</h1>
       </ListSubheader>
       <Box
+        
         sx={{
           height: 450,
           width: "90%",
@@ -82,15 +65,12 @@ export default function Categories({ serverData }: any) {
           >
             <a>
               <ImageListItem key={index} cols={2}>
-                
                 <img
                   src={`${item.image != null ? item.image : genericImage}`}
                   srcSet={`${item.image}`}
                   alt={item.name}
                   loading="eager"
-                  color="background.paper"
                 />
-
                 <ImageListItemBar
                   title={item.name}
                   subtitle={
@@ -101,46 +81,11 @@ export default function Categories({ serverData }: any) {
                       : item.affinity
                   }
                 />
->>>>>>> Stashed changes
               </ImageListItem>
-              {serverData.data.map((item: any, index: number) => (
-                <Link
-                  href={"/categories/[endpoint]/[id]"}
-                  as={`/categories/${router.query.endpoint}/${item.id}`}
-                >
-                  <a>
-                    <ImageListItem key={index} cols={5}>
-
-                      {/* <Image src={item.image} alt={""} height={60} width={60} /> */}
-
-                      <img
-                        src={`${
-                        
-                          item.image != null ? item.image : genericImage
-                        }`}
-                        srcSet={`${item.image}`}
-                        alt={item.name}
-                        loading="eager"
-
-                      />
-                      <ImageListItemBar
-                        title={item.name}
-                        subtitle={
-                          item.category != undefined
-                            ? item.category
-                            : item.type != undefined
-                            ? item.type
-                            : item.affinity
-                        }
-                      />
-                    </ImageListItem>
-                  </a>
-                </Link>
-              ))}
-            </ImageList>
-          </Grid>
-        </Grid>
-      </Container>
+            </a>
+          </Link>
+        ))}
+      </Box>
     </>
   );
 }
