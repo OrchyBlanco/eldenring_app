@@ -16,9 +16,6 @@ import type { NextPage } from "next";
 import { pages } from "../components/Pages";
 
 
-
-
-
 const Home: NextPage = () => {
   return (
     <>
