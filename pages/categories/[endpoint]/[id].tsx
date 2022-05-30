@@ -7,6 +7,7 @@ import {
   CardMedia,
   CardContent,
   CardActions,
+  CardActionArea,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import * as React from "react";
@@ -17,21 +18,24 @@ export default function Element({ serverData }: any) {
   const data = serverData.data;
 
   return (
-    <Container maxWidth="xl"
-    sx={{
-      display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-    }}>
+    <Container
+      maxWidth="xl"
+      sx={{
+        width: 1050,
+        height: 1050,
+        background: "#122620",
+      }}
+    >
       {/* <Grid container spacing={{xs:1,md:2}} columns={{xs:2,md:12}}>
          <Grid item>
               <Typography> {data.name}</Typography>
          </Grid>
        </Grid> */}
 
-      <Card
+      {/* <Card
         sx={{
           maxWidth: 800,
+          minHeight: 1200,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -61,7 +65,81 @@ export default function Element({ serverData }: any) {
             {data.description}
           </Typography>
         </CardContent>
-      </Card>
+        <div>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis quibusdam esse blanditiis facilis, earum aspernatur labore reiciendis iusto eum nulla fugiat consequuntur necessitatibus odio, voluptatibus nemo, cum aliquid nesciunt porro.
+        </div>
+      </Card> */}
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          pt: 2,
+        }}
+      >
+        <Grid item lg={4}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="280"
+                image={`${data.image}`}
+                alt="green iguana"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h4" component="div">
+                  {data.name}
+                </Typography>
+                <Typography gutterBottom variant="h5" component="div">
+                  {data.category}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {data.description}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item container spacing={1} lg={8}>
+          <Typography color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            modi deleniti atque, nobis, labore repellat, accusamus ratione
+            corporis dolorem explicabo magnam cupiditate quia laudantium id
+            neque ab repudiandae omnis possimus!
+          </Typography>
+          <Typography color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            modi deleniti atque, nobis, labore repellat, accusamus ratione
+            corporis dolorem explicabo magnam cupiditate quia laudantium id
+            neque ab repudiandae omnis possimus!
+          </Typography>
+          <Typography color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            modi deleniti atque, nobis, labore repellat, accusamus ratione
+            corporis dolorem explicabo magnam cupiditate quia laudantium id
+            neque ab repudiandae omnis possimus!
+          </Typography>
+        </Grid>
+        <Grid item container spacing={1} lg={12}>
+          <Typography color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            modi deleniti atque, nobis, labore repellat, accusamus ratione
+            corporis dolorem explicabo magnam cupiditate quia laudantium id
+            neque ab repudiandae omnis possimus!
+          </Typography>
+          <Typography color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            modi deleniti atque, nobis, labore repellat, accusamus ratione
+            corporis dolorem explicabo magnam cupiditate quia laudantium id
+            neque ab repudiandae omnis possimus!
+          </Typography>
+          <Typography color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            modi deleniti atque, nobis, labore repellat, accusamus ratione
+            corporis dolorem explicabo magnam cupiditate quia laudantium id
+            neque ab repudiandae omnis possimus!
+          </Typography>
+        </Grid>
+      </Grid>
     </Container>
   );
 }
