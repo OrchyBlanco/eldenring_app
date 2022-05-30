@@ -45,6 +45,7 @@ export default function Categories({ serverData }: any) {
           width: "90%",
           display: "grid",
           gap: 2,
+          
           gridTemplateColumns: {
             xs: "repeat(2, 1fr)",
             sm: "repeat(3, 1fr)",
@@ -64,7 +65,9 @@ export default function Categories({ serverData }: any) {
             as={`/categories/${router.query.endpoint}/${item.id}`}
           >
             <a>
-              <ImageListItem key={index} cols={2}>
+              <ImageListItem key={index} cols={2} sx={{
+                background: "#122620",
+              }}>
                 <img
                   src={`${item.image != null ? item.image : genericImage}`}
                   srcSet={`${item.image}`}
