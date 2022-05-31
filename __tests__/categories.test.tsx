@@ -47,15 +47,16 @@ describe("Categories", () => {
     expect(screen.getByText("ashes")).toBeInTheDocument();
   });
 
-  test('has an anchor tag with href="/categories"', () => {
+  test('has an anchor tag with href="/categories/ashes/[id]"', () => {
     ///categories/ashes/17f699db6b0l0hzn9xsxxwtgyfky3
     render(
       <RouterContext.Provider
-        value={createMockRouter({ query: { endpoint: "weapons" } })}
+        value={createMockRouter({ query: { endpoint: "ashes" } })}
       >
         <Categories serverData={props} />
       </RouterContext.Provider>
     );
-    expect(screen.getByText("Ash Of War: Prelate's Charge")).toHaveAttribute;
+    expect(screen.getByTestId("17f699db6b0l0hzn9xsxxwtgyfky3")).toHaveAttribute('href','/categories/ashes/17f699db6b0l0hzn9xsxxwtgyfky3');
+    
   });
 });
