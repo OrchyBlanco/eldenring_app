@@ -71,8 +71,8 @@ export default function Categories({ serverData }: any) {
                
               }}>
                 <img
-                  src={`${item.image === null ? /* "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lost_ashes_of_war_elden_ring_wiki_guide_200px.png" */ genericImage.src : item.image }`}
-                  srcSet={`${item.image === null ? /* "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lost_ashes_of_war_elden_ring_wiki_guide_200px.png" */ genericImage.src : item.image }`}
+                  src={`${item.image === null ?  genericImage.src : item.image }`}
+                  srcSet={`${item.image === null ?  genericImage.src : item.image }`}
                   alt={item.name}
                   loading="eager"
                 />

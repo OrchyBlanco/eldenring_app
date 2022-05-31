@@ -27,49 +27,6 @@ export default function Element({ serverData }: any) {
         background: "#122620",
       }}
     >
-      {/* <Grid container spacing={{xs:1,md:2}} columns={{xs:2,md:12}}>
-         <Grid item>
-              <Typography> {data.name}</Typography>
-         </Grid>
-       </Grid> */}
-
-      {/* <Card
-        sx={{
-          maxWidth: 800,
-          minHeight: 1200,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Box sx={{
-              display: { xs: "none", md: "flex" },
-              width:{ xs:"100%",md:"80%",lg:"50%"},
-            }}>
-        <CardMedia
-          component="img"
-          height="240"
-          
-          image={`${data.image}`}
-          alt="green iguana"
-        />
-        </Box>
-        
-        <CardContent>
-          <Typography gutterBottom variant="h4" component="div">
-            {data.name}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="div">
-            {data.category}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {data.description}
-          </Typography>
-        </CardContent>
-        <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis quibusdam esse blanditiis facilis, earum aspernatur labore reiciendis iusto eum nulla fugiat consequuntur necessitatibus odio, voluptatibus nemo, cum aliquid nesciunt porro.
-        </div>
-      </Card> */}
       <Grid
         container
         spacing={2}
@@ -83,7 +40,7 @@ export default function Element({ serverData }: any) {
               <CardMedia
                 component="img"
                 height="280"
-                image={`${data.image === null ? /* "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lost_ashes_of_war_elden_ring_wiki_guide_200px.png" */ genericImage.src : data.image }`}
+                image={`${data.image === null ?  genericImage.src : data.image }`}
                 alt="green iguana"
               />
               <CardContent>
@@ -144,6 +101,7 @@ export default function Element({ serverData }: any) {
     </Container>
   );
 }
+
 export async function getServerSideProps(context: any) {
   const endpoint = context.query.endpoint;
   const id = context.query.id;
