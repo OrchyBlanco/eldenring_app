@@ -12,9 +12,11 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 import { useEffect, useState } from "react";
 import genericImage from "../../../public/images/generic.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
@@ -33,7 +35,9 @@ export default function Categories({ serverData }: any) {
       >
         <h1>{router.query.endpoint}</h1>
       </ListSubheader>
+
       <Box        
+
         sx={{
           height: 450,
           width: "90%",
@@ -57,15 +61,13 @@ export default function Categories({ serverData }: any) {
             href={"/categories/[endpoint]/[id]"}
             as={`/categories/${router.query.endpoint}/${item.id}`}
           >
-            <a>
+            <a data-testid={item.id}>
               <ImageListItem key={index} cols={2} sx={{
-                background: "#122620",
-               
+                background: "#122620",               
               }}>
                 <img
                   src={`${item.image === null ?  genericImage.src : item.image }`}
                   srcSet={`${item.image === null ?  genericImage.src : item.image }`}
-
                   alt={item.name}
                   loading="eager"
                 />
