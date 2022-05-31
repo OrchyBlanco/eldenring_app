@@ -25,6 +25,7 @@ export default function Categories({ serverData }: any) {
 
   return (
     <>
+
      
       <ListSubheader
         component="div"
@@ -63,7 +64,7 @@ export default function Categories({ serverData }: any) {
             href={"/categories/[endpoint]/[id]"}
             as={`/categories/${router.query.endpoint}/${item.id}`}
           >
-            <a>
+            <a data-testid={item.id}>
               <ImageListItem key={index} cols={2}>
                 <img
                   src={`${item.image != null ? item.image : genericImage}`}
