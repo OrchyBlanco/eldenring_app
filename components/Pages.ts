@@ -1,4 +1,3 @@
-
 export const pages = [
   {
     label: "Weapons",
@@ -20,7 +19,7 @@ export const pages = [
   },
   {
     label: "Incantations",
-    endpoint: "bosses",
+    endpoint: "incantations",
     description: "Incantations are a type of Magic in Elden Ring. Incantation Spells are often dependent on the Faith stat, and have a variety of effects (such as healing, curing status effects, dealing damage, and enchanting people or weapons).",
 
   },
@@ -77,6 +76,5 @@ export const pages = [
     endpoint: "talismans",
     description: "Talismans in Elden Ring are accessories which can be equipped to acquire a variety of offensive, defensive, or utility effects. Talismans may be obtained as an item drop from Enemies or Bosses, looted from chests, or purchased from Merchants.",
   },
-];
-
+]; 
 
