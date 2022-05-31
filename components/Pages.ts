@@ -1,4 +1,3 @@
-
 export const pages = [
   {
     label: "Weapons",
@@ -10,6 +9,7 @@ export const pages = [
     label: "Armors",
     endpoint: "armors",
     description: "In Elden Ring, Armor are protective items worn by the player's character which grant protections, resistances, and various bonus effects against damage and status effects, as well as influencing statistics such as carry load and poise.",
+
   },
   {
     label: "Sorceries",
@@ -20,6 +20,7 @@ export const pages = [
     label: "Incantations",
     endpoint: "incantations",
     description: "Incantations are a type of Magic in Elden Ring. Incantation Spells are often dependent on the Faith stat, and have a variety of effects (such as healing, curing status effects, dealing damage, and enchanting people or weapons).",
+
   },
   {
     label: "Shields",
@@ -60,12 +61,11 @@ export const pages = [
     label: "Spirit Ashes",
     endpoint: "spirits",
     description: "Spirit Ashes in Elden Ring are Spirit companions that can aid the player in combat. As players progress through the game, they will be able to collect Spirit Ashes, which allow them to summon the spirits of fallen warriors and creatures. ",
+
   },
   {
     label: "Talismans",
     endpoint: "talismans",
     description: "Talismans in Elden Ring are accessories which can be equipped to acquire a variety of offensive, defensive, or utility effects. Talismans may be obtained as an item drop from Enemies or Bosses, looted from chests, or purchased from Merchants.",
   },
-];
-
-  
+]; 

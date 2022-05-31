@@ -10,14 +10,9 @@ import {
   CardActions,
 } from "@mui/material";
 import Link from "next/link";
-
 import Image from "next/image";
 import type { NextPage } from "next";
 import { pages } from "../components/Pages";
-
-
-
-
 
 const Home: NextPage = () => {
   return (

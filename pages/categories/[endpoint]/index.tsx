@@ -12,20 +12,15 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
 import { useEffect, useState } from "react";
 import genericImage from "../../../public/images/generic.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
-
-
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
   
   return (
     <>
-     
       <ListSubheader
         component="div"
         sx={{
@@ -38,14 +33,12 @@ export default function Categories({ serverData }: any) {
       >
         <h1>{router.query.endpoint}</h1>
       </ListSubheader>
-      <Box
-        
+      <Box        
         sx={{
           height: 450,
           width: "90%",
           display: "grid",
           gap: 2,
-          
           gridTemplateColumns: {
             xs: "repeat(2, 1fr)",
             sm: "repeat(3, 1fr)",
@@ -72,6 +65,7 @@ export default function Categories({ serverData }: any) {
                 <img
                   src={`${item.image === null ?  genericImage.src : item.image }`}
                   srcSet={`${item.image === null ?  genericImage.src : item.image }`}
+
                   alt={item.name}
                   loading="eager"
                 />
