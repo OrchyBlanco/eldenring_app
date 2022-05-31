@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
+import genericImage from "../../../public/images/generic.png";
 
 export default function Element({ serverData }: any) {
   const data = serverData.data;
@@ -82,7 +83,7 @@ export default function Element({ serverData }: any) {
               <CardMedia
                 component="img"
                 height="280"
-                image={`${data.image}`}
+                image={`${data.image === null ? /* "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lost_ashes_of_war_elden_ring_wiki_guide_200px.png" */ genericImage.src : data.image }`}
                 alt="green iguana"
               />
               <CardContent>

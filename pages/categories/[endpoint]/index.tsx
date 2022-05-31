@@ -14,7 +14,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { useEffect, useState } from "react";
-import genericImage from "../../../public/images/generic.jpg";
+import genericImage from "../../../public/images/generic.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 
@@ -22,7 +22,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
-
+  
   return (
     <>
      
@@ -60,6 +60,7 @@ export default function Categories({ serverData }: any) {
         }}
       >
         {serverData.data.map((item: any, index: number) => (
+          console.log(item.image),
           <Link
             href={"/categories/[endpoint]/[id]"}
             as={`/categories/${router.query.endpoint}/${item.id}`}
@@ -67,10 +68,11 @@ export default function Categories({ serverData }: any) {
             <a>
               <ImageListItem key={index} cols={2} sx={{
                 background: "#122620",
+               
               }}>
                 <img
-                  src={`${item.image != null ? item.image : genericImage}`}
-                  srcSet={`${item.image}`}
+                  src={`${item.image === null ? /* "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lost_ashes_of_war_elden_ring_wiki_guide_200px.png" */ genericImage.src : item.image }`}
+                  srcSet={`${item.image === null ? /* "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lost_ashes_of_war_elden_ring_wiki_guide_200px.png" */ genericImage.src : item.image }`}
                   alt={item.name}
                   loading="eager"
                 />
