@@ -60,7 +60,6 @@ export default function Categories({ serverData }: any) {
         }}
       >
         {serverData.data.map((item: any, index: number) => (
-          console.log(item.image),
           <Link
             href={"/categories/[endpoint]/[id]"}
             as={`/categories/${router.query.endpoint}/${item.id}`}

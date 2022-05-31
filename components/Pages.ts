@@ -18,7 +18,7 @@ export const pages = [
   },
   {
     label: "Incantations",
-    endpoint: "bosses",
+    endpoint: "incantations",
     description: "Incantations are a type of Magic in Elden Ring. Incantation Spells are often dependent on the Faith stat, and have a variety of effects (such as healing, curing status effects, dealing damage, and enchanting people or weapons).",
   },
   {
