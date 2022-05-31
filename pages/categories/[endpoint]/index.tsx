@@ -12,63 +12,15 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
 import { useEffect, useState } from "react";
-import genericImage from "../../../public/images/generic.jpg";
+import genericImage from "../../../public/images/generic.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Categories({ serverData }: any) {
   const router = useRouter();
-
+  
   return (
     <>
-      {/*  <Container maxWidth="xl">
-        <ImageList cols={4}>
-          <ImageListItem key="Subheader" cols={4}>
-            <ListSubheader
-              component="div"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-
-                textTransform: "capitalize",
-              }}
-            >
-              <h1>{router.query.endpoint}</h1>
-            </ListSubheader>
-          </ImageListItem>
-          {serverData.data.map((item: any, index: number) => (
-            <Link
-              href={"/categories/[endpoint]/[id]"}
-              as={`/categories/${router.query.endpoint}/${item.id}`}
-            >
-              <a>
-                <ImageListItem key={index} cols={2}>
-                  
-
-                  <img
-                    src={`${item.image != null ? item.image : genericImage}`}
-                    srcSet={`${item.image}`}
-                    alt={item.name}
-                    loading="eager"
-                  />
-                  <ImageListItemBar
-                    title={item.name}
-                    subtitle={
-                      item.category != undefined
-                        ? item.category
-                        : item.type != undefined
-                        ? item.type
-                        : item.affinity
-                    }
-                  />
-                </ImageListItem>
-              </a>
-            </Link>
-          ))}
-        </ImageList>
-      </Container> */}
       <ListSubheader
         component="div"
         sx={{
@@ -81,8 +33,7 @@ export default function Categories({ serverData }: any) {
       >
         <h1>{router.query.endpoint}</h1>
       </ListSubheader>
-      <Box
-        
+      <Box        
         sx={{
           height: 450,
           width: "90%",
@@ -107,10 +58,14 @@ export default function Categories({ serverData }: any) {
             as={`/categories/${router.query.endpoint}/${item.id}`}
           >
             <a>
-              <ImageListItem key={index} cols={2}>
+              <ImageListItem key={index} cols={2} sx={{
+                background: "#122620",
+               
+              }}>
                 <img
-                  src={`${item.image != null ? item.image : genericImage}`}
-                  srcSet={`${item.image}`}
+                  src={`${item.image === null ?  genericImage.src : item.image }`}
+                  srcSet={`${item.image === null ?  genericImage.src : item.image }`}
+
                   alt={item.name}
                   loading="eager"
                 />
