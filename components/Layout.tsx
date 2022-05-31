@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Five Fingers</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider theme={customTheme}>

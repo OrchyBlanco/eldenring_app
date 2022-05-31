@@ -20,8 +20,7 @@ export default function Element({serverData}:any) {
     const id = context.query.id;
     
     const response = await fetch(
-      `https://eldenring.fanapis.com/api/${endpoint}/${id}`
-    );
+      `https://eldenring.fanapis.com/api/${endpoint}/${id}`    );
     const serverData = await response.json();
   
     return { props: { serverData } };
