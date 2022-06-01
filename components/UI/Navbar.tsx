@@ -57,7 +57,7 @@ const ResponsiveAppBar = () => {
             }}
           >
             <Link href="/">
-              <a>
+              <a id="NavBar">
                 <Image
                   src={Logo}
                   alt={"Logo Five Fingers"}
