@@ -8,15 +8,19 @@ import {
   CardContent,
   CardActions,
   CardActionArea,
+  Breadcrumbs,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import genericImage from "../../../public/images/generic.png";
+import Link from "next/link";
 
 export default function Element({ serverData }: any) {
   const data = serverData.data;
+  const router = useRouter();
+  const endpoint= router.query.endpoint;
 
   return (
     <Container
@@ -27,6 +31,20 @@ export default function Element({ serverData }: any) {
         background: "#122620",
       }}
     >
+      {/* Breadcrumb */}
+      <Breadcrumbs aria-label="breadcrumb">
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <Link href={`/categories/${endpoint}`}>
+          <a style={{ textTransform: "capitalize" }}>{endpoint}</a>
+        </Link>
+        
+        <Typography color="text.primary" sx={{ textTransform: "capitalize" }}>
+          {data.name}
+        </Typography>
+      </Breadcrumbs>
+
       <Grid
         container
         spacing={2}
@@ -57,46 +75,8 @@ export default function Element({ serverData }: any) {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid item container spacing={1} lg={8}>
-          <Typography color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            modi deleniti atque, nobis, labore repellat, accusamus ratione
-            corporis dolorem explicabo magnam cupiditate quia laudantium id
-            neque ab repudiandae omnis possimus!
-          </Typography>
-          <Typography color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            modi deleniti atque, nobis, labore repellat, accusamus ratione
-            corporis dolorem explicabo magnam cupiditate quia laudantium id
-            neque ab repudiandae omnis possimus!
-          </Typography>
-          <Typography color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            modi deleniti atque, nobis, labore repellat, accusamus ratione
-            corporis dolorem explicabo magnam cupiditate quia laudantium id
-            neque ab repudiandae omnis possimus!
-          </Typography>
-        </Grid>
-        <Grid item container spacing={1} lg={12}>
-          <Typography color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            modi deleniti atque, nobis, labore repellat, accusamus ratione
-            corporis dolorem explicabo magnam cupiditate quia laudantium id
-            neque ab repudiandae omnis possimus!
-          </Typography>
-          <Typography color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            modi deleniti atque, nobis, labore repellat, accusamus ratione
-            corporis dolorem explicabo magnam cupiditate quia laudantium id
-            neque ab repudiandae omnis possimus!
-          </Typography>
-          <Typography color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            modi deleniti atque, nobis, labore repellat, accusamus ratione
-            corporis dolorem explicabo magnam cupiditate quia laudantium id
-            neque ab repudiandae omnis possimus!
-          </Typography>
-        </Grid>
+        
+       
       </Grid>
     </Container>
   );
