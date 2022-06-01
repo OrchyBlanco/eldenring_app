@@ -14,6 +14,7 @@ import {
   Typography,
   Card,
   CardMedia,
+  Fab,
 } from "@mui/material";
 import Link from "next/link";
 import { Link as HyperLink } from "@mui/material";
@@ -21,6 +22,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import genericImage from "../../../public/images/generic.png";
+import NavigationIcon from "@mui/icons-material/Navigation";
 
 export default function Categories({ serverData, search }: any) {
   const router = useRouter();
@@ -42,140 +44,73 @@ export default function Categories({ serverData, search }: any) {
 
   console.log(items);
   return (
-    <Container maxWidth="xl">
-      {/* Breadcrumb */}
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Typography color="text.primary" sx={{ textTransform: "capitalize" }}>
-          {endpoint}
-        </Typography>
-      </Breadcrumbs>
+    <>
+      <Container maxWidth="xl">
+        {/* Breadcrumb */}
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Typography color="text.primary" sx={{ textTransform: "capitalize" }}>
+            {endpoint}
+          </Typography>
+        </Breadcrumbs>
 
-      <InfiniteScroll
-        dataLength={items.length}
-        next={() => {
-          setPage((prevPage) => prevPage + 1);
-        }}
-        hasMore={hasMore}
-        loader={<CircularProgress />}
-        style={{ overflow: "inherit" }}
-        
-      >
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          sx={{ p: 3 }}
+        <InfiniteScroll
+          dataLength={items.length}
+          next={() => {
+            setPage((prevPage) => prevPage + 1);
+          }}
+          hasMore={hasMore}
+          loader={<CircularProgress />}
+          style={{ overflow: "inherit" }}
         >
-          {items.map((item: any) => (
-            <Grid
-              item
-              xs={1}
-              sm={2}
-              md={3}
-              key={item.id}
-              sx={{ overflow: "hidden" }}
-            >
-              <Card>
-                <Link
-                  href={"/categories/[endpoint]/[id]"}
-                  as={`/categories/${router.query.endpoint}/${item.id}`}
-                >
-                  <a data-testid={item.id}>
-                    <CardMedia
-                      component="img"
-                      image={`${
-                        item.image === null ? genericImage.src : item.image
-                      }`}
-                      alt={item.name}
-                    />
-                  </a>
-                </Link>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </InfiniteScroll>
-    </Container>
-
-    // <>
-    //   <InfiniteScroll
-    //     dataLength={items.length}
-    //     next={() => setPage((prevPage) => prevPage + 1)}
-    //     hasMore={true}
-    //     loader={<CircularProgress />}
-    //   ></InfiniteScroll>
-    //   <ListSubheader
-    //     component="div"
-    //     sx={{
-    //       display: "flex",
-    //       alignItems: "center",
-    //       justifyContent: "center",
-    //       width: "90%",
-    //       textTransform: "capitalize",
-    //     }}
-    //   >
-    //     <h1>{endpoint}</h1>
-    //   </ListSubheader>
-
-    //   <Box
-    //     sx={{
-    //       height: 450,
-    //       width: "90%",
-    //       display: "grid",
-    //       gap: 2,
-    //       gridTemplateColumns: {
-    //         xs: "repeat(2, 1fr)",
-    //         sm: "repeat(3, 1fr)",
-    //         md: "repeat(4, 1fr)",
-    //         lg: "repeat(5, 1fr)",
-    //         xl: "repeat(7, 1fr)",
-    //       },
-    //       [`& .${imageListItemClasses.root}`]: {
-    //         display: "flex",
-    //         flexDirection: "column",
-    //       },
-    //     }}
-    //   >
-    //     {items.map((item: any, index: number) => (
-    //       <Link
-    //         href={"/categories/[endpoint]/[id]"}
-    //         as={`/categories/${router.query.endpoint}/${item.id}`}
-    //       >
-    //         <a data-testid={item.id}>
-    //           <ImageListItem
-    //             key={index}
-    //             cols={2}
-    //             sx={{
-    //               background: "#122620",
-    //             }}
-    //           >
-    //             <img
-    //               src={`${item.image === null ? genericImage.src : item.image}`}
-    //               srcSet={`${
-    //                 item.image === null ? genericImage.src : item.image
-    //               }`}
-    //               alt={item.name}
-    //               loading="eager"
-    //             />
-    //             <ImageListItemBar
-    //               title={item.name}
-    //               subtitle={
-    //                 item.category != undefined
-    //                   ? item.category
-    //                   : item.type != undefined
-    //                   ? item.type
-    //                   : item.affinity
-    //               }
-    //             />
-    //           </ImageListItem>
-    //         </a>
-    //       </Link>
-    //     ))}
-    //   </Box>
-    // </>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+            sx={{ p: 3 }}
+          >
+            {items.map((item: any) => (
+              <Grid
+                item
+                xs={1}
+                sm={2}
+                md={3}
+                key={item.id}
+                sx={{ overflow: "hidden" }}
+              >
+                <Card>
+                  <Link
+                    href={"/categories/[endpoint]/[id]"}
+                    as={`/categories/${router.query.endpoint}/${item.id}`}
+                  >
+                    <a data-testid={item.id}>
+                      <CardMedia
+                        component="img"
+                        image={`${
+                          item.image === null ? genericImage.src : item.image
+                        }`}
+                        alt={item.name}
+                      />
+                    </a>
+                  </Link>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </InfiniteScroll>
+      </Container>
+      <Fab
+        variant="extended"
+        color="primary"
+        aria-label="goTop"
+        sx={{ position: "sticky", bottom: 1 }}
+        href="#NavBar"
+      >
+        <NavigationIcon sx={{ mr: 1 ,position: "sticky", bottom: 1, left:1 }} />
+      </Fab>
+    </>
   );
 }
 
